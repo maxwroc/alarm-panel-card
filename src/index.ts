@@ -1,7 +1,7 @@
-import { MyCustomCard } from "./custom-element/my-custom-card";
+import { MyCustomCard as AlarmPanelCard } from "./custom-element/alarm-panel-card";
 import { printVersion } from "./utils";
 
 // Registering card
-customElements.define("my-custom-card", MyCustomCard);
+customElements.define("alarm-panel-card", AlarmPanelCard);
 
 printVersion();
