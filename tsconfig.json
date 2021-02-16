@@ -3,9 +3,9 @@
         "rootDir": "src",
         "target": "ES6",
         "alwaysStrict": true,
-        "noImplicitAny": true,
+        "noImplicitAny": false,
         "strictNullChecks": true,
         "noImplicitThis": true,
-        "strict": true
+        "strict": false
     }
 }
