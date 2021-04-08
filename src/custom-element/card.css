@@ -37,8 +37,29 @@
     margin-right: 10px;
 }
 
-
-
+#lock {
+    transform: scale(0);
+    transition: all .2s ease-in-out;
+}
+#unlock-btn {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#unlock-btn .icon-wrapper {
+    border: 2px solid var(--success-color);
+    border-radius: 25px;
+    padding: 10px;
+}
+.unlock-visible #lock {
+    transform: scale(1);
+}
+.unlock-visible #unlock-btn {
+    display: none;
+}
 
 
 

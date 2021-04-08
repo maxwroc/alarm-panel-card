@@ -42,6 +42,14 @@ export class MyCustomCard extends LitElement {
         this.cardTitle = config.title;
     }
 
+    unlock() {
+        let container = this.shadowRoot!.querySelector("ha-card") as HTMLElement;
+
+        container.classList.add("unlock-visible");
+
+        setTimeout(() => container.classList.remove("unlock-visible"), 2000);
+    }
+
     /**
      * Renders the card when the update is requested (when any of the properties are changed)
      */
@@ -56,18 +64,23 @@ export class MyCustomCard extends LitElement {
         }, 2000)
         return html`
         <ha-card>
+            <div id="unlock-btn" @click=${this.unlock}>
+                <div class="icon-wrapper">
+                    <ha-icon icon="mdi:shield-check" style="color: var(--success-color)"></ha-icon>
+                </div>
+            </div>
             <svg class="patternlock" id="lock" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                 <g class="lock-actives"></g>
                 <g class="lock-lines"></g>
                 <g class="lock-dots">
-                    <circle cx="20" cy="20" r="5"/>
+                    <circle cx="20" cy="20" r="2"/>
                     <circle cx="50" cy="20" r="2"/>
                     <circle cx="80" cy="20" r="2"/>
-            
+
                     <circle cx="20" cy="50" r="2"/>
                     <circle cx="50" cy="50" r="2"/>
                     <circle cx="80" cy="50" r="2"/>
-            
+
                     <circle cx="20" cy="80" r="2"/>
                     <circle cx="50" cy="80" r="2"/>
                     <circle cx="80" cy="80" r="2"/>
